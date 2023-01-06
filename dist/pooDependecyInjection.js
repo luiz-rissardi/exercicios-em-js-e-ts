@@ -40,6 +40,6 @@ class PayService {
 }
 const card = new cartao("1234sdfs342", 3000, 7000, new PayService());
 const card2 = new cartao("75345dfsdf", 2000, 9000, new PayService());
-card.pagar(2000);
+card.pagar(2500);
 console.log(card.Saldo);
 export {};
