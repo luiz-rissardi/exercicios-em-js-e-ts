@@ -1,9 +1,9 @@
 import { ContaBancaria } from "./Poodependencyinversion.js"
-import { ServiceBradesco } from "./exportsClass.js"
+import { ServiceSicredi } from "./exportsClass.js"
  
 function Main(){
-    const bradesco = new ServiceBradesco()
-    const conta = new ContaBancaria(15634467234, 7000, true,bradesco);
+    const banco = new ServiceSicredi()
+    const conta = new ContaBancaria(15634467234, 7000, true,banco);
     conta.Pagar(2000);
     conta.Depositar(1000)
     conta.Depositar(1000)
@@ -14,7 +14,7 @@ function Main(){
     conta.Depositar(1000)
     conta.Depositar(1000)
     console.log(conta);
-    console.log(bradesco)
+    console.log(banco)
 }
 
 Main()
