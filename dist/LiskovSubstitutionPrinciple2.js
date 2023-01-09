@@ -14,6 +14,10 @@ class recepcionista extends Employee {
     }
 }
 class vendedor extends Employee {
+    constructor() {
+        super(...arguments);
+        this.comissao = 392.80;
+    }
     definirGerente(gerente) {
         this.gerente = gerente;
     }
@@ -49,13 +53,27 @@ class Ceo extends Employee {
         return this.salario;
     }
 }
+function master(employee) {
+    console.log(employee);
+}
+
 const gerente1 = new Ceo();
 gerente1.nome = "luiz";
-gerente1.calcSalario(5);
-
-const recepcionista1 = new vendedor();
+gerente1.calcSalario(4);
+const recepcionista1 = new recepcionista();
 recepcionista1.nome = "leticia";
 recepcionista1.calcSalario(2);
 recepcionista1.definirGerente(gerente1);
-console.log(recepcionista1.gerente);
-export {};
+const recepcionista2 = new vendedor();
+recepcionista2.nome = "leticia";
+recepcionista2.calcSalario(2);
+recepcionista2.definirGerente(gerente1);
+const recepcionista3 = new gerente();
+recepcionista3.nome = "leticia";
+recepcionista3.calcSalario(2);
+recepcionista3.definirGerente(gerente1);
+master(recepcionista1);
+master(recepcionista2);
+master(recepcionista3);
+master(gerente1);
+export { };

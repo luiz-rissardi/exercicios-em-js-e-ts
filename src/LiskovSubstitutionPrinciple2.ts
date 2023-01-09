@@ -24,11 +24,11 @@ class recepcionista extends Employee implements Igerenciado{
 
 class vendedor extends Employee implements Igerenciado {
     gerente!: Igerenciador;
-
+    comissao:number = 392.80;
     definirGerente(gerente: Igerenciador): void {
         this.gerente = gerente
     }
-    comissao!:number;
+
     override calcSalario(rank: number): number {
         this.salario = rank * 1000 + this.comissao;
         return this.salario
@@ -68,10 +68,13 @@ class Ceo extends Employee implements Igerenciador{
         this.salario = 1000*rank + 700*(rank/2)
         return this.salario
     }
-
 }
 
-const gerente1 = new gerente()
+function master(employee:Employee){
+    console.log(employee)
+}
+
+const gerente1 = new Ceo()
 gerente1.nome = "luiz";
 gerente1.calcSalario(4)
 
@@ -81,4 +84,19 @@ recepcionista1.nome = "leticia";
 recepcionista1.calcSalario(2)
 recepcionista1.definirGerente(gerente1)
 
-console.log(recepcionista1)
+const recepcionista2 = new vendedor()
+recepcionista2.nome = "leticia";
+recepcionista2.calcSalario(2)
+recepcionista2.definirGerente(gerente1)
+
+
+const recepcionista3 = new gerente()
+recepcionista3.nome = "leticia";
+recepcionista3.calcSalario(2)
+recepcionista3.definirGerente(gerente1)
+
+
+master(recepcionista1)
+master(recepcionista2)
+master(recepcionista3)
+master(gerente1)
