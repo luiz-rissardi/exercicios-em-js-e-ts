@@ -56,7 +56,6 @@ class Ceo extends Employee {
 function master(employee) {
     console.log(employee);
 }
-
 const gerente1 = new Ceo();
 gerente1.nome = "luiz";
 gerente1.calcSalario(4);
@@ -76,4 +75,4 @@ master(recepcionista1);
 master(recepcionista2);
 master(recepcionista3);
 master(gerente1);
-export { };
+export {};

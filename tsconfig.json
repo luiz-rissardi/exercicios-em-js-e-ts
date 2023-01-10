@@ -5,7 +5,7 @@
     "forceConsistentCasingInFileNames": true,
     "rootDir": "./src", 
     "outDir": "./dist",           /* Ensure that casing is correct in imports. */
-    "module": "ESNext",
+    "module": "ES6",
     "moduleResolution": "NodeNext",
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true ,                           /* Skip type checking all .d.ts files. */
