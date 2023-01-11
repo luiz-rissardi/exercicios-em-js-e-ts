@@ -14,7 +14,7 @@ function apartamento(area:number,numero:number,nome:string,andar:Andar){
         nome,
         preco,
         calcPreco():void{
-            this.preco = Number(andar.calcpreco(area).toFixed(2))
+            this.preco = +andar.calcpreco(area).toFixed(2)
         }
     }
 }

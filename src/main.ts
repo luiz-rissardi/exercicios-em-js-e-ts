@@ -1,20 +1,21 @@
-import { ContaBancaria } from "./Poodependencyinversion.js"
-import { ServiceSicredi } from "./exportsClass.js"
- 
+import { Desconto30, Desconto0, carinho } from "./carrinhoDeCompra.js"
+import { Validador } from "./validador.js"
+import { mensageiroEMAIL } from "./mensageiros.js"
+import { caixa } from "./caixa.js"
+
+
 function Main(){
-    const banco = new ServiceSicredi()
-    const conta = new ContaBancaria(15634467234, 7000, true,banco);
-    conta.Pagar(2000);
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    conta.Depositar(1000)
-    console.log(conta);
-    console.log(banco)
+    const mensageiro = new mensageiroEMAIL()
+    const validador = new Validador()
+    const desconto = new Desconto0()
+    const shopCar = new carinho(validador,desconto)
+    const caxa = new caixa(validador,mensageiro,shopCar)
+    caxa.iniciarCompra();
+    shopCar.addProduto({ nome: "camisa", preco: 43.98, qtde: 3 });
+    shopCar.addProduto({ nome: "tennis", preco: 43.98, qtde: 3 });
+    shopCar.addProduto({ nome: "mesa", preco: 43.98, qtde: 3 });
+    shopCar.addProduto({ nome: "mesa", preco: 43.98, qtde: 3 });
+    caxa.finalizarCompra()
 }
 
 Main()

@@ -5,6 +5,8 @@ class edificio{
     }
 }
 
+
+
 abstract class Andar{
     calcpreco(areaQuadrada:number):number { return 0}
 }
@@ -14,6 +16,7 @@ class Andar1  extends Andar{
         return areaQuadrada * 1.3;
     }
 }
+
 class Andar2  extends Andar{
     override calcpreco(areaQuadrada: number): number {
         return areaQuadrada * 1.43;
@@ -65,9 +68,14 @@ class Apartamento extends edificio{
     }
 }
 
+function master(nAndar:number){
+    const fator = nAndar + 500  
+}
+
+
 
 function main(){
-    const apartamento = new Apartamento("louzianna",340,new Andar2)
+    const apartamento = new Apartamento("louzianna",340,new Andar5)
     apartamento.calcPreco()
     console.log(apartamento)
 }
